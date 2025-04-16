@@ -1,5 +1,5 @@
 apiVersion: ai.sap.com/v1alpha1
-kind: WorkflowTemplate
+kind: testfoundation_model_template
 metadata:
   name: testfoundation-models-template
 spec:
