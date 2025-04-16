@@ -1,0 +1,14 @@
+name: sample-workflow
+version: "1.0"
+spec:
+  inputs:
+    parameters:
+      - name: input_data
+        type: string
+  steps:
+    - name: run-model
+      template: run-model
+      arguments:
+        parameters:
+          - name: input_data
+            value: "{{inputs.parameters.input_data}}"
