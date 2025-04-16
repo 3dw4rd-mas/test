@@ -1,0 +1,15 @@
+name: my-scenario
+description: Run foundation model prompt using registered workflow template
+inputs:
+  prompt:
+    type: string
+    default: "Write a haiku about AI"
+  temperature:
+    type: number
+    default: 0.7
+  max_tokens:
+    type: integer
+    default: 100
+workflow:
+  type: ai.sap.com/workflow-template
+  id: foundation-models-template
