@@ -1,9 +1,9 @@
 name: my-scenario
-description: Run foundation model prompt using custom workflow
+description: Run foundation model prompt using registered workflow template
 inputs:
   prompt:
     type: string
-    default: "Tell me a joke"
+    default: "Write a haiku about AI"
   temperature:
     type: number
     default: 0.7
@@ -12,4 +12,4 @@ inputs:
     default: 100
 workflow:
   type: ai.sap.com/workflow-template
-  id: testfoundation-models-template
+  id: foundation-models-template
