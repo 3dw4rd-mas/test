@@ -1,0 +1,18 @@
+name: sample-echo-workflow
+version: "1.0"
+spec:
+  templates:
+    - name: echo-template
+      type: custom
+      image: python:3.10-slim
+      command: ["python", "echo.py"]
+      inputs:
+        parameters:
+          - name: input_text
+            type: string
+
+  entrypoint: echo-template
+  inputs:
+    parameters:
+      - name: input_text
+        type: string
