@@ -1,14 +1,17 @@
-name: sample-workflow
-version: "1.0"
-spec:
-  inputs:
-    parameters:
-      - name: input_data
-        type: string
-  steps:
-    - name: run-model
-      template: run-model
-      arguments:
-        parameters:
-          - name: input_data
-            value: "{{inputs.parameters.input_data}}"
+name: my-scenario
+description: Example scenario for testing
+inputs:
+  prompt:
+    type: string
+    default: "Hello from SAP AI Core!"
+  temperature:
+    type: number
+    default: 0.7
+    optional: true
+  max_tokens:
+    type: integer
+    default: 100
+    optional: true
+workflow:
+  type: ai-core-workflow-template
+  id: foundation-models
