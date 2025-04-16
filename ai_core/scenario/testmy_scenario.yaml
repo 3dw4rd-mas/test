@@ -11,5 +11,5 @@ inputs:
     type: integer
     default: 100
 workflow:
-  type: testfoundation-models-template
-  id: testfoundation-models-template
+  type: ai.sap.com/workflow-template
+  id: foundation-models-template
