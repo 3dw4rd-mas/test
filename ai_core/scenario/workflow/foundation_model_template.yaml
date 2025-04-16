@@ -1,7 +1,7 @@
 apiVersion: ai.sap.com/v1alpha1
 kind: WorkflowTemplate
 metadata:
-  name: testfoundation-models-template
+  name: foundation-models-template
   annotations:
     scenarios.ai.sap.com/used-for: "foundation-models"
 spec:
@@ -13,11 +13,6 @@ spec:
           - name: prompt
           - name: temperature
           - name: max_tokens
-      outputs:
-        parameters:
-          - name: response
-            valueFrom:
-              path: /output/response.txt
       container:
         image: docker.io/saplabs/foundation-models-runner:latest
         command: [ "python3" ]
@@ -29,9 +24,3 @@ spec:
           - "{{inputs.parameters.temperature}}"
           - --max_tokens
           - "{{inputs.parameters.max_tokens}}"
-        volumeMounts:
-          - name: output
-            mountPath: /output
-      volumes:
-        - name: output
-          emptyDir: {}
